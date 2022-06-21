@@ -12,6 +12,7 @@
   "author": "Mauricio Jourdán",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -24,7 +25,9 @@
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "joi": "^17.6.0",
-    "pg": "^8.7.3"
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.0"
   },
   "engines": {
     "node": "14.x"
