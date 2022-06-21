@@ -14,8 +14,8 @@ const port = 3000;
 app.use(express.json());
 const whiteList = ['http://localhost:8080', 'https://my-app.com'];
 const options = {
-  origen: (origen, callback) => {
-    if (whiteList.includes(origen)) {
+  origen: (origin, callback) => {
+    if (whiteList.includes(origin) || !origin) {
       callback(null, true);
     } else {
       callback(new Error('Accso no permitido'));
