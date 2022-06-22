@@ -6,6 +6,7 @@ const {
   logErrors,
   errorHandler,
   boomErrorHandler,
+  ormErrorHandler,
 } = require('./middlewares/error.handler');
 
 const app = express();
@@ -24,12 +25,6 @@ const options = {
 };
 app.use(cors(options));
 
-routerApi(app);
-// Utilizamos los middleware. Siempre deben ir después del routing:
-app.use(logErrors);
-app.use(boomErrorHandler);
-app.use(errorHandler);
-
 app.get('/', (req, res) => {
   res.send('Hola mi server en Express');
 });
@@ -38,9 +33,14 @@ app.get('/nueva-ruta', (req, res) => {
   res.send('Soy una nueva ruta!!!');
 });
 
+routerApi(app);
+// Utilizamos los middleware. Siempre deben ir después del routing:
+app.use(logErrors);
+app.use(ormErrorHandler);
+app.use(boomErrorHandler);
+app.use(errorHandler);
+
 app.listen(port, () => {
   console.log('My port: ' + port);
   console.log('http://localhost:3000/');
 });
-
-// routerApi(app);
