@@ -11,6 +11,10 @@ const config = {
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
   dbUrl: process.env.DATABASE_URL,
+  apiKey: process.env.API_KEY,
+  jwtSecret: process.env.JWT_SECRET,
+  mailerEmail: process.env.MAILER_EMAIL,
+  mailerPassword: process.env.MAILER_PASSWORD,
 };
 // console.log('Config', config);
 
